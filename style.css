@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e8f5e9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%234CAF50' fill-opacity='0.1' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'%3E%3C/path%3E%3C/svg%3E");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.game-container {
+    background-color: #f0fff0;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    padding: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border: 2px solid #4CAF50;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath fill='%234CAF50' fill-opacity='0.08' d='M30 30c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8zm0 36c-5.523 0-10-4.477-10-10s4.477-10 10-10 10 4.477 10 10-4.477 10-10 10zm0-18c-4.411 0-8 3.589-8 8s3.589 8 8 8 8-3.589 8-8-3.589-8-8-8z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+h1 {
+    color: #2E7D32;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 28px;
+    position: relative;
+    display: inline-block;
+}
+
+h1:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background-color: #4CAF50;
+    border-radius: 2px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.game-settings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    border: 1px solid #A5D6A7;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+}
+
+.speed-control,
+.size-control,
+.color-control {
+    margin: 5px 10px;
+    text-align: center;
+}
+
+.speed-control label,
+.size-control label,
+.color-control label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.speed-control input[type="range"] {
+    width: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.size-control select,
+.color-control select {
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid #81C784;
+    background-color: #f5fff5;
+    cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.game-controls {
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 5px 3px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    fill: currentColor;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+#game-board {
+    background-color: #000;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid #388E3C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.game-instructions {
+    margin-top: 20px;
+    text-align: left;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    border: 1px solid #A5D6A7;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
+}
+
+.game-instructions h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.game-instructions p {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.food-points {
+    list-style-type: none;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.food-points li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.food-white,
+.food-yellow,
+.food-orange,
+.food-red {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 8px;
+    border-radius: 3px;
+}
+
+.food-white {
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+.food-yellow {
+    background-color: #ffeb3b;
+}
+
+.food-orange {
+    background-color: #ff9800;
+}
+
+.food-red {
+    background-color: #f44336;
+}
+
+@media (max-width: 500px) {
+    .game-container {
+        padding: 10px;
+        width: 95%;
+    }
+    
+    #game-board {
+        width: 100%;
+        height: auto;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-settings {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .speed-control,
+    .size-control,
+    .color-control {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .speed-control input[type="range"],
+    .size-control select,
+    .color-control select {
+        width: 90%;
+    }
+    
+    .game-controls button {
+        margin: 5px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

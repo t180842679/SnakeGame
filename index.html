@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>贪吃蛇游戏</h1>
+        <div class="game-info">
+            <div class="score">分数: <span id="score">0</span></div>
+            <div class="high-score">最高分: <span id="high-score">0</span></div>
+            <div class="game-time">游戏时间: <span id="game-time">00:00</span></div>
+        </div>
+        <div class="game-settings">
+            <div class="speed-control">
+                <label for="speed-slider">游戏速度: <span id="speed-value">7</span></label>
+                <input type="range" id="speed-slider" min="3" max="15" value="7" step="1">
+            </div>
+            <div class="size-control">
+                <label for="size-select">游戏区域大小:</label>
+                <select id="size-select">
+                    <option value="300">小 (300x300)</option>
+                    <option value="400" selected>中 (400x400)</option>
+                    <option value="500">大 (500x500)</option>
+                </select>
+            </div>
+            <div class="color-control">
+                <label for="color-select">背景颜色:</label>
+                <select id="color-select">
+                    <option value="black" selected>黑色</option>
+                    <option value="#1a1a2e">深蓝色</option>
+                    <option value="#2d3436">深灰色</option>
+                    <option value="#3c1642">深紫色</option>
+                </select>
+            </div>
+        </div>
+        <div class="game-controls">
+            <button id="start-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg> 开始游戏</button>
+            <button id="pause-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg> 暂停</button>
+            <button id="restart-btn"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg> 重新开始</button>
+        </div>
+        <canvas id="game-board" width="400" height="400"></canvas>
+        <div class="game-instructions">
+            <h3>游戏说明:</h3>
+            <p>使用方向键 ↑ ↓ ← → 控制蛇的移动</p>
+            <p>不同颜色的食物得分不同:</p>
+            <ul class="food-points">
+                <li><span class="food-white"></span> 白色: 1分 (默认)</li>
+                <li><span class="food-yellow"></span> 黄色: 2分 (60%几率)</li>
+                <li><span class="food-orange"></span> 橙色: 3分 (40%几率)</li>
+                <li><span class="food-red"></span> 红色: 4分 (20%几率)</li>
+            </ul>
+            <p>撞到墙壁或自己的身体游戏结束</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
